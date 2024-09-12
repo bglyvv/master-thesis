@@ -1,0 +1,30 @@
+{
+  "configurations": [
+    {
+      "browse": {
+        "databaseFilename": "${default}",
+        "limitSymbolsToIncludedHeaders": false
+      },
+      "includePath": [
+        "/home/bglyvv/thesis_ws/devel/include/**",
+        "/opt/ros/noetic/include/**",
+        "/home/bglyvv/catkin_ws/devel/include/**",
+        "/home/bglyvv/thesis_ws/src/gazebo-pkgs/gazebo_grasp_plugin/include/**",
+        "/home/bglyvv/thesis_ws/src/gazebo-pkgs/gazebo_state_plugins/include/**",
+        "/home/bglyvv/thesis_ws/src/gazebo-pkgs/gazebo_test_tools/include/**",
+        "/home/bglyvv/thesis_ws/src/gazebo-pkgs/gazebo_version_helpers/include/**",
+        "/home/bglyvv/thesis_ws/src/gazebo-pkgs/gazebo_world_plugin_loader/include/**",
+        "/home/bglyvv/thesis_ws/src/general-message-pkgs/object_msgs_tools/include/**",
+        "/home/bglyvv/catkin_ws/src/RH-P12-RN/rh_p12_rn_base_module/include/**",
+        "/home/bglyvv/catkin_ws/src/RH-P12-RN/rh_p12_rn_gui/include/**",
+        "/usr/include/**"
+      ],
+      "name": "ROS",
+      "intelliSenseMode": "gcc-x64",
+      "compilerPath": "/usr/bin/gcc",
+      "cStandard": "gnu11",
+      "cppStandard": "c++14"
+    }
+  ],
+  "version": 4
+}

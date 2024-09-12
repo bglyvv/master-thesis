@@ -1,0 +1,2 @@
+/usr/bin/ar qc libgpd_data_generator.a  CMakeFiles/gpd_data_generator.dir/src/gpd/data_generator.cpp.o
+/usr/bin/ranlib libgpd_data_generator.a

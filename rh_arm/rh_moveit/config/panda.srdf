@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--This does not replace URDF, and is not an extension of URDF.
+    This is a format for representing semantic information about the robot structure.
+    A URDF file must exist for this robot as well, where the joints and the links that are referenced are defined
+-->
+<robot name="panda">
+    <!--GROUPS: Representation of a set of joints and links. This can be useful for specifying DOF to plan for, defining arms, end effectors, etc-->
+    <!--LINKS: When a link is specified, the parent joint of that link (if it exists) is automatically included-->
+    <!--JOINTS: When a joint is specified, the child link of that joint (which will always exist) is automatically included-->
+    <!--CHAINS: When a chain is specified, all the links along the chain (including endpoints) are included in the group. Additionally, all the joints that are parents to included links are also included. This means that joints along the chain and the parent joint of the base link are included in the group-->
+    <!--SUBGROUPS: Groups can also be formed by referencing to already defined group names-->
+    <group name="arm">
+        <chain base_link="panda_link0" tip_link="rh_p12_rn_base"/>
+    </group>
+    <group name="gripper">
+        <joint name="rh_l1"/>
+        <joint name="rh_p12_rn"/>
+    </group>
+    <group_state name="zero_pose" group="arm">
+        <joint name="panda_joint1" value="0"/>
+        <joint name="panda_joint2" value="0"/>
+        <joint name="panda_joint3" value="0"/>
+        <joint name="panda_joint4" value="0"/>
+        <joint name="panda_joint5" value="0"/>
+        <joint name="panda_joint6" value="0"/>
+        <joint name="panda_joint7" value="0"/>
+    </group_state>
+    <group_state name="basic_pose" group="arm">
+        <joint name="panda_joint1" value="2.276"/>
+        <joint name="panda_joint2" value="1.482"/>
+        <joint name="panda_joint3" value="-1.140"/>
+        <joint name="panda_joint4" value="-3.072"/>
+        <joint name="panda_joint5" value="1.753"/>
+        <joint name="panda_joint6" value="1.397"/>
+        <joint name="panda_joint7" value="-0.697"/>
+    </group_state>
+    <group_state name="90deg_pose" group="arm">
+        <joint name="panda_joint1" value="0"/>
+        <joint name="panda_joint2" value="0"/>
+        <joint name="panda_joint3" value="0"/>
+        <joint name="panda_joint4" value="-1.573"/>
+        <joint name="panda_joint5" value="0"/>
+        <joint name="panda_joint6" value="0"/>
+        <joint name="panda_joint7" value="0"/>
+    </group_state>
+   <group_state name="pick2" group="arm">
+        <joint name="panda_joint1" value="-2.053228170628755"/>
+        <joint name="panda_joint2" value="-1.5882496193148399"/>
+        <joint name="panda_joint3" value="1.6929693744344996"/>
+        <joint name="panda_joint4" value="-1.7453292519943295"/>
+        <joint name="panda_joint5" value="1.5707963267948966"/>
+        <joint name="panda_joint6" value="1.6231562043547265"/>
+        <joint name="panda_joint7" value="-0.6632251157578453"/>
+    </group_state>
+
+    <group_state name="place" group="arm">
+        <joint name="panda_joint1" value="-2.274907381182994"/>
+        <joint name="panda_joint2" value="-1.1837848606481338"/>
+        <joint name="panda_joint3" value="1.3105346677450163"/>
+        <joint name="panda_joint4" value="-1.2738982171867574"/>
+        <joint name="panda_joint5" value="1.2247818140216635"/>
+        <joint name="panda_joint6" value="1.1562898801758932"/>
+        <joint name="panda_joint7" value="-0.5315589075724352"/>
+    </group_state>
+    <!--DISABLE COLLISIONS: By default it is assumed that any link of the robot could potentially come into collision with any other link in the robot. This tag disables collision checking between a specified pair of links. -->
+    <disable_collisions link1="panda_link0" link2="panda_link1" reason="Adjacent"/>
+    <disable_collisions link1="panda_link0" link2="panda_link2" reason="Never"/>
+    <disable_collisions link1="panda_link0" link2="panda_link3" reason="Never"/>
+    <disable_collisions link1="panda_link0" link2="panda_link4" reason="Never"/>
+    <disable_collisions link1="panda_link1" link2="panda_link2" reason="Adjacent"/>
+    <disable_collisions link1="panda_link1" link2="panda_link3" reason="Never"/>
+    <disable_collisions link1="panda_link1" link2="panda_link4" reason="Never"/>
+    <disable_collisions link1="panda_link2" link2="panda_link3" reason="Adjacent"/>
+    <disable_collisions link1="panda_link2" link2="panda_link4" reason="Never"/>
+    <disable_collisions link1="panda_link3" link2="panda_link4" reason="Adjacent"/>
+    <disable_collisions link1="panda_link3" link2="panda_link5" reason="Never"/>
+    <disable_collisions link1="panda_link3" link2="panda_link6" reason="Never"/>
+    <disable_collisions link1="panda_link3" link2="panda_link7" reason="Never"/>
+    <disable_collisions link1="panda_link3" link2="rh_p12_rn_base" reason="Never"/>
+    <disable_collisions link1="panda_link3" link2="rh_p12_rn_l1" reason="Never"/>
+    <disable_collisions link1="panda_link3" link2="rh_p12_rn_l2" reason="Never"/>
+    <disable_collisions link1="panda_link3" link2="rh_p12_rn_r1" reason="Never"/>
+    <disable_collisions link1="panda_link3" link2="rh_p12_rn_r2" reason="Never"/>
+    <disable_collisions link1="panda_link4" link2="panda_link5" reason="Adjacent"/>
+    <disable_collisions link1="panda_link4" link2="panda_link6" reason="Never"/>
+    <disable_collisions link1="panda_link4" link2="panda_link7" reason="Never"/>
+    <disable_collisions link1="panda_link4" link2="rh_p12_rn_base" reason="Never"/>
+    <disable_collisions link1="panda_link4" link2="rh_p12_rn_l1" reason="Never"/>
+    <disable_collisions link1="panda_link4" link2="rh_p12_rn_l2" reason="Never"/>
+    <disable_collisions link1="panda_link4" link2="rh_p12_rn_r1" reason="Never"/>
+    <disable_collisions link1="panda_link4" link2="rh_p12_rn_r2" reason="Never"/>
+    <disable_collisions link1="panda_link5" link2="panda_link6" reason="Adjacent"/>
+    <disable_collisions link1="panda_link5" link2="panda_link7" reason="Default"/>
+    <disable_collisions link1="panda_link6" link2="panda_link7" reason="Adjacent"/>
+    <disable_collisions link1="panda_link6" link2="rh_p12_rn_base" reason="Never"/>
+    <disable_collisions link1="panda_link6" link2="rh_p12_rn_l1" reason="Never"/>
+    <disable_collisions link1="panda_link6" link2="rh_p12_rn_l2" reason="Never"/>
+    <disable_collisions link1="panda_link6" link2="rh_p12_rn_r1" reason="Never"/>
+    <disable_collisions link1="panda_link6" link2="rh_p12_rn_r2" reason="Never"/>
+    <disable_collisions link1="panda_link7" link2="rh_p12_rn_base" reason="Adjacent"/>
+    <disable_collisions link1="panda_link7" link2="rh_p12_rn_l1" reason="Never"/>
+    <disable_collisions link1="panda_link7" link2="rh_p12_rn_l2" reason="Never"/>
+    <disable_collisions link1="panda_link7" link2="rh_p12_rn_r1" reason="Never"/>
+    <disable_collisions link1="panda_link7" link2="rh_p12_rn_r2" reason="Never"/>
+    <disable_collisions link1="rh_p12_rn_base" link2="rh_p12_rn_l1" reason="Adjacent"/>
+    <disable_collisions link1="rh_p12_rn_base" link2="rh_p12_rn_l2" reason="Never"/>
+    <disable_collisions link1="rh_p12_rn_base" link2="rh_p12_rn_r1" reason="Adjacent"/>
+    <disable_collisions link1="rh_p12_rn_base" link2="rh_p12_rn_r2" reason="Never"/>
+    <disable_collisions link1="rh_p12_rn_l1" link2="rh_p12_rn_l2" reason="Adjacent"/>
+    <disable_collisions link1="rh_p12_rn_l1" link2="rh_p12_rn_r1" reason="Never"/>
+    <disable_collisions link1="rh_p12_rn_r1" link2="rh_p12_rn_r2" reason="Adjacent"/>
+</robot>

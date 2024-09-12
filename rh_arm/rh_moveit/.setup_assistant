@@ -1,0 +1,11 @@
+moveit_setup_assistant_config:
+  URDF:
+    package: rh_p12_rn_description
+    relative_path: urdf/rh_urdf.urdf
+    xacro_args: ""
+  SRDF:
+    relative_path: config/panda.srdf
+  CONFIG:
+    author_name: asdf
+    author_email: afd@gmail.com
+    generated_timestamp: 1720598319
